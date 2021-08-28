@@ -1,0 +1,56 @@
+__author__ = 'Al Azzam'
+
+print("Welcome To WindowsPython 1.0 Beta")
+user_name = input("Enter Your UserName : ")
+pass_word = input("Enter Your PassWord : ")
+print("Wait...")
+enter_continue = input("Enter Continue To Continue : ")
+if enter_continue == "Continue":
+    print("Hello, " + user_name + "...")
+    print("Select Your Application:")
+    print("A = NotePad")
+    print("B = WordPad")
+    print("C = Clock")
+    print("D = Calculator")
+    print("E = Edge")
+    print("Want Tutorial? Enter Tutorial!")
+    select_app = input()
+    if select_app == "A":
+        import subprocess
+
+        subprocess.Popen('C:\\Windows\\System32\\notepad.exe')
+    if select_app == "B":
+        import subprocess
+
+        subprocess.run('C:\\Windows\\System32\\write.exe')
+    if select_app == "C":
+        import datetime
+
+        e = datetime.datetime.now()
+
+        print(e.strftime("%Y-%m-%d %H:%M:%S"))
+
+        print(e.strftime("%d/%m/%Y"))
+
+        print(e.strftime("%I:%M:%S %p"))
+
+        print(e.strftime("%a, %b %d, %Y"))
+    if select_app == "D":
+        import subprocess
+
+        subprocess.Popen('C:\\Windows\\System32\\calc.exe')
+    if select_app == "E":
+        import webbrowser
+
+        edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+
+        webbrowser.register('edge', None, webbrowser.BackgroundBrowser(edge_path))
+
+        webbrowser.get('edge').open('http://www.bing.com')
+    if select_app == "Tutorial":
+        print("Enter A For NotePad,")
+        print("Enter B For WordPad,")
+        print("Enter C For Clock,")
+        print("Enter D For Calculator,")
+        print("Enter E For Edge,")
+    input("Tap Enter To Exit")
